@@ -27,3 +27,8 @@ export type MainButtonProps = {
     register?: UseFormRegisterReturn;
     disabled?: boolean;
   }; 
+
+export interface SidebarLayoutProps {
+  image?: string | React.ReactElement
+  title: string
+}

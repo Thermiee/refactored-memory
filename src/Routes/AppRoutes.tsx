@@ -4,16 +4,19 @@ import AuthLayout from "../Layouts/AuthLayout";
 import ForgotPassword from "../Pages/Auth/ForgotPassword";
 import Login from "../Pages/Auth/Login";
 import NotFound from "../Pages/Notfound";
+import DashboardLayout from "../Layouts/DashboardLayout";
+import Home from "../Pages/Dashboard";
 
 export const AuthRoutes: RouteObject[] = [
   {
     path: "/",
     element: <AuthLayout />,
     children: [
-      { index: true, element: <Login /> }, 
-      { path: "auth", children: [
-        { path: "forgot-password", element: <ForgotPassword /> },
-      ]},
+      { index: true, element: <Login /> },
+      {
+        path: "auth",
+        children: [{ path: "forgot-password", element: <ForgotPassword /> }],
+      },
     ],
   },
   {
@@ -21,3 +24,14 @@ export const AuthRoutes: RouteObject[] = [
     element: <NotFound />,
   },
 ];
+
+export const HomeRoutes = {
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: "home",
+        element: <Home />,
+      },
+    ],
+  }
+
