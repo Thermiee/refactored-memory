@@ -19,6 +19,17 @@ const ForgotPassword: React.FC = () => {
 
         <MainButton>Send reset link</MainButton>
       </form>
+      <div>
+        <p className="text-center mt-4 text-black">
+         
+          <span
+            className="text-primary ml-1 font-bold cursor-pointer"
+            onClick={() => navigate("/")}
+          >
+           Back to Login
+          </span>
+        </p>
+      </div>
       {/* <div className="space-x-2 mt-4">
         <p className="text-center mt-4 text-black">
           Don't have an account?

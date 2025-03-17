@@ -30,21 +30,10 @@ const Login: React.FC = () => {
           Forgot password?
         </Link>
         <MainButton 
-           onClick={() => navigate("/onboarding")}
+           onClick={() => navigate("/home")}
         >Login</MainButton>
       </form>
 
-      {/* <div className="space-x-2 mt-4">
-        <p className="text-center mt-4 text-black">
-          Don't have an account?
-          <span
-            className="text-primary ml-1 font-bold cursor-pointer"
-            onClick={() => navigate("/auth/register")}
-          >
-            Sign Up
-          </span>
-        </p>
-      </div> */}
     </div>
   );
 };
