@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { crmSidebarLinks, crmBottomLinks, SidebarLinks } from "./data";
+import { crmSidebarLinks, crmBottomLinks } from "./data";
 import SidebarLayout from "./SidebarLayout";
 import useCurrentPath from "../../Hooks/useCurrentPath";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
+import { SidebarLinks } from "../../types";
 
 const MobileSideNav: React.FC = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const MobileSideNav: React.FC = () => {
 
   const handleNavigation = (url: string) => {
     navigate(url);
-    setIsOpen(false); // Close sidebar after navigation
+    setIsOpen(false); 
   };
 
   const renderLinks = (links: SidebarLinks[]) => {

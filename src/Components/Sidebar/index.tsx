@@ -13,7 +13,6 @@ const Sidebar: React.FC = () => {
   };
 
   const renderLinks = (links: SidebarLinks[]) => {
-    console.log("Rendering links:", links); // Debugging line
     return links.map(({ id, title, image, url }) => (
       <div
         key={id}

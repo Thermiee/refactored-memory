@@ -55,7 +55,7 @@ const BarChart = ({ data }: Props) => {
           if (typeof val === "number") {
             return `${val.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`
           }
-          return "0" // Return 0 when no value is available
+          return "0" 
         },
       },
     },
@@ -97,7 +97,7 @@ const BarChart = ({ data }: Props) => {
         },
         speed: 800,
       },
-      stacked: true, // Change to horizontal stacking if needed
+      stacked: true, 
     },
     xaxis: {
       categories: verticalChartData?.xaxis?.categories || [],

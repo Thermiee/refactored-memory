@@ -2,26 +2,50 @@ import React from "react";
 import { MainButton } from "../../Components/Form/button";
 import { FormInput } from "../../Components/Form/input";
 import { Link, useNavigate } from "react-router-dom";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { LoginUser } from "../../types/auth";
 
+const schema = yup.object().shape({
+  email: yup.string().required("email is required"),
+  password: yup.string().required("Password is required"),
+});
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginUser>({
+    resolver: yupResolver(schema),
+  });
+
+  const formSubmit: SubmitHandler<LoginUser> = (data) => {
+    console.log(data);
+    navigate("/home");
+  };
+
   return (
     <div className=" flex flex-col">
       <h1 className="text-3xl font-medium">Welcome back</h1>
       <p>Login to your account</p>
-      <form className="flex flex-col w-96 space-y-4 mt-4">
+      <form
+        onSubmit={handleSubmit(formSubmit)}
+        className="flex flex-col w-96 space-y-4 mt-4"
+      >
         <FormInput
           type="email"
           placeholder="Email"
-          // register={register("email")}
-          // error={errors.email?.message}
+          register={register("email")}
+          error={errors.email?.message}
         />
         <FormInput
           type="password"
           placeholder="Password"
-          // register={register("password")}
-          // error={errors.password?.message}
+          register={register("password")}
+          error={errors.password?.message}
         />{" "}
         <Link
           to="/auth/forgot-password"
@@ -29,11 +53,8 @@ const Login: React.FC = () => {
         >
           Forgot password?
         </Link>
-        <MainButton 
-           onClick={() => navigate("/home")}
-        >Login</MainButton>
+        <MainButton onClick={() => navigate("/home")}>Login</MainButton>
       </form>
-
     </div>
   );
 };
