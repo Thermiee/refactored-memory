@@ -1,8 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { crmBottomLinks, crmSidebarLinks, SidebarLinks } from "./data";
+import { crmBottomLinks, crmSidebarLinks } from "./data";
 import SidebarLayout from "./SidebarLayout";
 import useCurrentPath from "../../Hooks/useCurrentPath";
+import { SidebarLinks } from "../../types";
 
 const Sidebar: React.FC = () => {
   const navigate = useNavigate();
