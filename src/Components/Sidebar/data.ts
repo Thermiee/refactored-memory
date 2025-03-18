@@ -34,7 +34,7 @@ export const crmSidebarLinks: SidebarLinks[] = [
   {
     id: 4,
     title: "Tasks",
-    url: "#",
+    url: "tasks",
     image: Help,
     headingText: "Tasks",
   },

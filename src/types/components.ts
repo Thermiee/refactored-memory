@@ -38,3 +38,10 @@ export type CardType = {
   icon: React.ReactNode;
   number: number;
 };
+
+export interface Task {
+  id: number;
+  title: string;
+  description: string;
+  completed: boolean;
+}

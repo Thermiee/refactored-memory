@@ -6,6 +6,7 @@ import Login from "../Pages/Auth/Login";
 import NotFound from "../Pages/Notfound";
 import DashboardLayout from "../Layouts/DashboardLayout";
 import Home from "../Pages/Dashboard";
+import TaskList from "../Pages/Tasks";
 
 export const AuthRoutes: RouteObject[] = [
   {
@@ -32,6 +33,10 @@ export const HomeRoutes = {
         path: "home",
         element: <Home />,
       },
+      {
+        path: "tasks",
+        element: <TaskList />,
+      }
     ],
   }
 
