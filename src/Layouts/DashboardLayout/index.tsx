@@ -1,5 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
+import Sidebar from '../../Components/Sidebar'
 
 const DashboardLayout: React.FC = () => {
   return (
@@ -10,11 +11,11 @@ const DashboardLayout: React.FC = () => {
         <div
           className="flex flex-col rounded-lg h-full items-center w-full "
           style={{
-            background: "linear-gradient(180deg, #0078FF 0%, #0146D9 100%)",
+            background: "linear-gradient(180deg, #092428 0%, #0E5159 100%)",
           }}
         >
           <div className="w-full mt-24 h-full">
-            {/* <Sidebar />  */}
+            <Sidebar /> 
           </div>
         </div>
       </nav>
