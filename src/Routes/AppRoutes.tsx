@@ -7,6 +7,7 @@ import NotFound from "../Pages/Notfound";
 import DashboardLayout from "../Layouts/DashboardLayout";
 import Home from "../Pages/Dashboard";
 import TaskList from "../Pages/Tasks";
+import Users from "../Pages/Users";
 
 export const AuthRoutes: RouteObject[] = [
   {
@@ -36,6 +37,10 @@ export const HomeRoutes = {
       {
         path: "tasks",
         element: <TaskList />,
+      },
+      {
+        path: "users",
+        element: <Users />,
       }
     ],
   }

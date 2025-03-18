@@ -19,7 +19,7 @@ export const crmSidebarLinks: SidebarLinks[] = [
   {
     id: 3,
     title: "Users",
-    url: "#",
+    url: "users",
     image: Person,
     headingText: "Users",
   },
