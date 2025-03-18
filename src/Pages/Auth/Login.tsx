@@ -22,8 +22,8 @@ const Login: React.FC = () => {
     resolver: yupResolver(schema),
   });
 
-  const formSubmit: SubmitHandler<LoginUser> = (data) => {
-    console.log(data);
+  const formSubmit: SubmitHandler<LoginUser> = async (data) => {
+    console.log(data); 
     navigate("/home");
   };
 
@@ -53,7 +53,7 @@ const Login: React.FC = () => {
         >
           Forgot password?
         </Link>
-        <MainButton onClick={() => navigate("/home")}>Login</MainButton>
+        <MainButton type="submit">Login</MainButton>
       </form>
     </div>
   );

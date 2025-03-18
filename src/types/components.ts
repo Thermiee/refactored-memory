@@ -45,3 +45,11 @@ export interface Task {
   description: string;
   completed: boolean;
 }
+
+export interface SidebarLinks {
+  id: number;
+  title: string;
+  url: string;
+  image?: string | React.ReactElement;
+  headingText: string;
+}
