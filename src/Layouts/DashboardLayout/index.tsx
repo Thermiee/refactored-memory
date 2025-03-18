@@ -1,11 +1,14 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Sidebar from '../../Components/Sidebar'
+import UserNav from '../../Components/Sidebar/UserNav'
 
 const DashboardLayout: React.FC = () => {
   return (
     <div className="bg-white overflow-x-hidden w-screen h-screen relative">
-\
+        <div>
+          <UserNav />
+        </div>
     <div className="flex p-2 ">
       <nav className=" py-2 z-20 md:flex-[.2] lg:flex-[.15] h-[89vh] mt-14 rounded-lg fixed top-0 w-[19%] hidden md:block">
         <div

@@ -32,3 +32,9 @@ export interface SidebarLayoutProps {
   image?: string | React.ReactElement
   title: string
 }
+
+export type CardType = {
+  description: string;
+  icon: React.ReactNode;
+  number: number;
+};

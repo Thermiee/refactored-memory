@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { crmSidebarLinks, SidebarLinks } from "./data";
+import { crmBottomLinks, crmSidebarLinks, SidebarLinks } from "./data";
 import SidebarLayout from "./SidebarLayout";
 import useCurrentPath from "../../Hooks/useCurrentPath";
 
@@ -24,7 +24,7 @@ const Sidebar: React.FC = () => {
         aria-label={`Navigate to ${title}`}
         className="py-[1px] cursor-pointer hover:bg-gray-600 transition-colors duration-200"
         style={{
-          background: url === activeLink[1] 
+          background: url === activeLink[1]
             ? "linear-gradient(270deg, #FFF -47.16%, rgba(255, 255, 255, 0.00) 72.88%)"
             : "",
         }}
@@ -35,8 +35,14 @@ const Sidebar: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col h-full justify-between" style={{ height: "100vh" }}>
+    <div className="flex flex-col h-full justify-between" style={{ height: "75vh" }}>
+      {/* Main CRM Links */}
       <div>{renderLinks(crmSidebarLinks)}</div>
+
+      {/* Bottom CRM Links */}
+      <div className="mt-auto">
+        {renderLinks(crmBottomLinks)}
+      </div>
     </div>
   );
 };
