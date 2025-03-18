@@ -41,7 +41,7 @@ const MobileSideNav: React.FC = () => {
 
   return (
     <div>
-      {/* Hamburger Menu Button */}
+
       <button
         onClick={toggleSidebar}
         className="p-3 lg:hidden"
@@ -51,14 +51,14 @@ const MobileSideNav: React.FC = () => {
         <RxHamburgerMenu className="text-2xl text-primary" />
       </button>
 
-      {/* Sidebar Overlay and Content */}
+
       <div
         className={`fixed inset-0 bg-gray-800 bg-opacity-75 z-50 ${
           isOpen ? "block" : "hidden"
         } lg:hidden`}
       >
         <div className="bg-primary h-full flex flex-col justify-between">
-          {/* Sidebar Header */}
+  
           <div className="m-5 flex justify-between items-center">
             <h1 className="text-white text-xl font-bold">CRM Dashboard</h1>
             <button
@@ -70,12 +70,12 @@ const MobileSideNav: React.FC = () => {
             </button>
           </div>
 
-          {/* Main Sidebar Links */}
+
           <div className="flex-1 overflow-y-auto">
             {renderLinks(crmSidebarLinks)}
           </div>
 
-          {/* Bottom CRM Links */}
+
           <div className="mt-auto">
             {renderLinks(crmBottomLinks)}
           </div>

@@ -36,10 +36,10 @@ const Sidebar: React.FC = () => {
 
   return (
     <div className="flex flex-col h-full justify-between" style={{ height: "75vh" }}>
-      {/* Main CRM Links */}
+
       <div>{renderLinks(crmSidebarLinks)}</div>
 
-      {/* Bottom CRM Links */}
+
       <div className="mt-auto">
         {renderLinks(crmBottomLinks)}
       </div>
