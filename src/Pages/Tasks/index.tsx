@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Task } from '../../types';
 import Modal from '../../Components/Modal';
+import { MainButton } from '../../Components/Form/button';
 
 const TaskList: React.FC = () => {
   
@@ -85,8 +86,8 @@ const TaskList: React.FC = () => {
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Task Manager</h1>
 
-      <div className='flex'>
-         <div className="mb-4 p-4 border rounded w-1/5 mr-3">
+      <div className='flex-col flex lg:flex-row'>
+         <div className="mb-4 p-4 border h-[260px] rounded lg:w-1/5 mr-3">
         <h2 className="text-xl font-bold mb-4">Add New Task</h2>
         <input
           type="text"
@@ -101,14 +102,14 @@ const TaskList: React.FC = () => {
           placeholder="Task Description"
           className="p-2 border rounded mb-2 w-full"
         />
-        <button
+        <MainButton
           onClick={addTask}
           className="p-2 bg-blue-500 text-white rounded"
         >
           Add Task
-        </button>
+        </MainButton>
       </div>
-      <table className=" bg-white shadow-lg w-4/5">
+      <table className=" bg-white shadow-lg lg:w-4/5">
         <thead>
           <tr>
             <th className="py-2">Completed</th>
@@ -137,19 +138,19 @@ const TaskList: React.FC = () => {
                   {task.description}
                 </span>
               </td>
-              <td className="py-2 text-center">
-                <button
+              <td className="py-2 text-center space-y-4">
+                <MainButton
                   onClick={() => openEditModal(task)}
-                  className="p-1 bg-yellow-500 text-white rounded mr-2"
+                  className="p-1 bg-yellow-400 w-[70px] rounded-none border-white  mr-2"
                 >
                   Edit
-                </button>
-                <button
+                </MainButton>
+                <MainButton
                   onClick={() => deleteTask(task.id)}
-                  className="p-1 bg-red-500 text-white rounded"
+                  className="p-1 bg-red-500 w-[70px]  rounded-none  border-white mr-2"
                 >
                   Delete
-                </button>
+                </MainButton>
               </td>
             </tr>
           ))}
